@@ -173,8 +173,10 @@ void Game::handleCommand(int playerIdx, const Command& cmd) {
         } else {
             handlePlay(playerIdx, cmd);
         }
+    } else if (state == State::WAITING) {
+        sendTo(playerIdx, "ERROR waiting for other player...\n");
     } else {
-        sendTo(playerIdx, "ERROR invalid state or not your turn\n");
+        sendTo(playerIdx, "ERROR invalid state for commands\n");
     }
 }
 
