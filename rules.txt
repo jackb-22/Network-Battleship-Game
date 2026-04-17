@@ -1,0 +1,48 @@
+Welcome to Battleship!
+
+The rules are as follows:
+When you connect to the server, you will begin in the SETUP phase. Your job is to place all your ships in your desired positions. You have the following ships:
+
+1 CARRIER of size 5
+1 BATTLESHIP of size 4
+1 CRUISER of size 3
+2 DESTROYERS of size 2
+2 SUBMARINES of size 1
+
+To place your ships, utilize the following format:
+
+PLACE SHIPNAME ROW_NUMBER (0 - 9) COLUMN_NUMBER (0 - 9) ORIENTATION (V or H)
+
+For example, the following is a valid placement command:
+
+PLACE DESTROYER 0 0 H
+
+The orientation assumes that the row and column number provided indicate the leftmost point for H (horizontal) and the top most point for V (vertical). The board goes from 0 on the left to 9 on the right and 0 at the top to 9 on the bottom.
+
+You also have access to the following commands
+
+RESET
+DONE
+STATUS
+
+RESET allows you to reset your board during the SETUP phase. Be cautious! This will reset all of your ships. DONE is how you confirm your board and exit the SETUP phase. The game will begin when both players submit DONE. Please note that if you submit DONE before the other player, you will enter a WAITING state. No commands will be valid inside the WAITING state. STATUS allows you to see the phase of the game you are in, the number of ships you have on the board, and the number of ships your opponent has on the board as well. This command will remain available in later stages.
+
+Once you have exited the SETUP phase, you will enter the PLAYING state! Inside the PLAYING state, you will have access to the following commands:
+
+STATUS
+ATTACK
+HISTORY
+
+HISTORY will present you will the entire move set so far! It will include the moves each player has made, as well as if that move resulted in a MISS, HIT, or SUNK a ship! STATUS will present all the same information as during the SETUP state, updating the count of remaining ships as the game progresses. It will now also contain the player whose turn it currently is. ATTACK is how you attack your opponent. To use this command, follow the following format:
+
+ATTACK ROW_NUMBER (0 - 9) COLUMN_NUMBER (0 - 9)
+
+For example, the following is a valid attack command:
+
+ATTACK 0 0
+
+The attack command will notify you whether you hit, miss, or sunk a ship! You will only know which ship was hit in the event that you sunk that ship!
+
+Please note, if either player exits the game during any state, the entire game will reset for both players. 
+
+Good luck!
